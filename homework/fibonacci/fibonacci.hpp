@@ -18,5 +18,9 @@ int fibonacci_iterative(int sequence) {
 
 int fibonacci_recursive(int sequence) {
     // TODO: Your implementation goes here
-    return 0;
+    if (sequence == 0 or sequence == 1)
+        return sequence;
+    int prev = fibonacci_recursive(sequence - 1);
+    int prev_prev = fibonacci_recursive(sequence - 2);
+    return prev + prev_prev;
 }
