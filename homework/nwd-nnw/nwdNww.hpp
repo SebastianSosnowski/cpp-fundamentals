@@ -1,5 +1,4 @@
 #pragma once
-#include <numeric>
 
 int NWD(int lhs, int rhs) {
     if (lhs == 0)
@@ -23,6 +22,10 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
-    // TODO: Implement me :)
-    return -1;
+    if (lhs == 0 or rhs == 0) {
+        return 0;
+    }
+    int res = abs((lhs * rhs) / NWD(lhs, rhs));
+    return res;
+    // or just return std::lcm(lhs, rhs); :)
 }
