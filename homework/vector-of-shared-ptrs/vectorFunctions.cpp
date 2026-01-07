@@ -14,11 +14,19 @@ void print(const std::vector<std::shared_ptr<int>>& vec) {
 }
 
 void add10(std::vector<std::shared_ptr<int>>& vec) {
-    ;
+    for (auto& num : vec) {
+        if (num) {
+            *num += 10;
+        }
+    }
 }
-void sub10(const int* num) {
-    ;
+void sub10(int* const num) {
+    if (num) {
+        *num -= 10;
+    }
 }
 void sub10(std::vector<std::shared_ptr<int>> vec) {
-    ;
+    for (auto& num : vec) {
+        sub10(num.get());
+    }
 }
